@@ -1,11 +1,10 @@
-import Service from "./Service.js";
-import Pokemon from "./Pokemon.js";
+import Page from "./Page.js";
 
 debugger;
 
-const pruebaPokemon = new Pokemon(
+const pruebaPokemon = new Page(
   ".componente",
   "pokemonBox",
   "div",
-  "https://pokeapi.co/api/v2/pokemon/1/"
+  "https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0"
 );
