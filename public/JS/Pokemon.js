@@ -5,10 +5,11 @@ class Pokemon extends Component {
   name;
   imgUrl;
   url;
-  pokemon = [];
+  pokemon;
   constructor(parentElement, className, tag, url) {
     super(parentElement, className, tag);
     this.url = url;
+
     (async () => {
       let servicePokemon = new Service(this.url);
       let mostrarPokemon = await servicePokemon.getService(this.url);
@@ -21,15 +22,22 @@ class Pokemon extends Component {
   }
   createHTML() {
     const textHTML = `
-        pokemonBox
         <h2 class="pokemonBox__namePokemon">${this.name}</h2>
         <img
           class="pokemonBox__imagPokemon"
           src="${this.imgUrl}"
           alt=""
         />
+        <button class="pokemonBox__button">Info Pokemon</button>
       `;
     this.element.innerHTML = textHTML;
+    let button = this.element.querySelector(".pokemonBox__button");
+    button.addEventListener("click", () => this.mostrarInformacion());
+  }
+
+  mostrarInformacion() {
+    console.log(this.name);
+    console.log(this.url);
   }
 }
 

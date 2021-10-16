@@ -1,5 +1,40 @@
+.componente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+}
+.componente__navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  height: 50px;
+  width: 80vw;
+}
+.componente_boton-pagina {
+  height: 40px;
+}
+
+.pokemonBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  background-color: aquamarine;
+  box-sizing: border-box;
+}
+.pokemonBox__pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+  border-style: dotted;
+}
 .pokemonBox__imagPokemon {
-  width: 300px;
+  height: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */
