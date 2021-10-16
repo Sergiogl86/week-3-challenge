@@ -1,5 +1,6 @@
 .componente {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   width: 80vw;
@@ -13,7 +14,11 @@
   height: 50px;
   width: 80vw;
 }
-.componente_boton-pagina {
+.componente__boton-pagina-anterior {
+  height: 40px;
+  display: none;
+}
+.componente__boton-pagina-posterior {
   height: 40px;
 }
 
@@ -23,18 +28,18 @@
   justify-content: space-between;
   margin: auto;
   background-color: aquamarine;
-  box-sizing: border-box;
 }
 .pokemonBox__pokemon {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 18%;
+  width: 200px;
   border-style: dotted;
 }
 .pokemonBox__imagPokemon {
   height: 150px;
+  width: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */
