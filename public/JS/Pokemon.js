@@ -28,16 +28,22 @@ class Pokemon extends Component {
           src="${this.imgUrl}"
           alt=""
         />
-        <button class="pokemonBox__button">Info Pokemon</button>
+        
+        <div><button class="pokemonBox__button-fav">|Añadir a Favoritos|</button>
+        <div><button class="pokemonBox__button">Info Pokemon</button></div>
       `;
     this.element.innerHTML = textHTML;
-    let button = this.element.querySelector(".pokemonBox__button");
-    button.addEventListener("click", () => this.mostrarInformacion());
+    let button = this.element.querySelector(".pokemonBox__button-fav");
+    button.addEventListener("click", () => this.enviarInformacion());
   }
 
-  mostrarInformacion() {
+  enviarInformacion() {
+    debugger;
     console.log(this.name);
     console.log(this.url);
+    let datos = { name: this.name, url: this.url };
+    let enviarPokemon = new Service(this.url);
+    enviarPokemon.createElement(datos, "http://localhost:3001/posts");
   }
 }
 

@@ -3,7 +3,7 @@ import Pokemon from "./Pokemon.js";
 import Service from "./Service.js";
 import Button from "./Button.js";
 
-class Page extends Component {
+class FavoritosPage extends Component {
   paginaPokemons;
   urlPokemonsPagina;
   numeroPagina = 0;
@@ -16,20 +16,6 @@ class Page extends Component {
     super(parentElement, className, tag);
     this.urlPokemonsPagina = url;
     this.createHTML();
-    new Button(
-      ".componente__navegacion",
-      "componente__boton-pagina-anterior",
-      "button",
-      "|Pagina Anterior|",
-      () => this.paginaAnterior()
-    );
-    new Button(
-      ".componente__navegacion",
-      "componente__boton-pagina-posterior",
-      "button",
-      "|Pagina Siguiente|",
-      () => this.paginaSiguiente()
-    );
 
     this.imprimirPokemons();
   }
@@ -42,7 +28,7 @@ class Page extends Component {
         <a href="./favoritos.html"> Listado Pokemons favoritos</a>
       </nav>
     </header>
-      <h2>Pokemons - Pokemon API</h2>
+      <h2>Pokemons - Pokemons Favoritos</h2>
         <nav class="componente__navegacion"></nav>
         <ul class="pokemonBox"></ul>
       `;
@@ -56,7 +42,7 @@ class Page extends Component {
         this.urlPokemonsPagina
       );
       console.log(mostrarPokemon);
-      this.paginaPokemons = mostrarPokemon.results;
+      this.paginaPokemons = mostrarPokemon;
       this.paginaPokemons.map(
         (pokemon) =>
           new Pokemon(".pokemonBox", "pokemonBox__pokemon", "li", pokemon.url)
@@ -104,4 +90,4 @@ class Page extends Component {
   }
 }
 
-export default Page;
+export default FavoritosPage;
