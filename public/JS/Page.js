@@ -1,6 +1,7 @@
 import Component from "./Component.js";
 import Pokemon from "./Pokemon.js";
 import Service from "./Service.js";
+import Button from "./Button.js";
 
 class Page extends Component {
   paginaPokemons;
@@ -8,6 +9,21 @@ class Page extends Component {
   constructor(parentElement, className, tag, url) {
     super(parentElement, className, tag);
     this.urlPokemonsPagina = url;
+    this.createHTML();
+    new Button(
+      ".componente__navegacion",
+      "componente_boton-pagina",
+      "button",
+      "|Pagina Anterior|",
+      this.paginaAnterior
+    );
+    new Button(
+      ".componente__navegacion",
+      "componente_boton-pagina",
+      "button",
+      "|Pagina Siguiente|",
+      this.paginaSiguiente
+    );
 
     (async () => {
       let servicePokemon = new Service(this.urlPokemonsPagina);
@@ -18,16 +34,24 @@ class Page extends Component {
       this.paginaPokemons = mostrarPokemon.results;
       this.paginaPokemons.map(
         (pokemon) =>
-          new Pokemon(".componente", "pokemonBox__pokemon", "div", pokemon.url)
+          new Pokemon(".pokemonBox", "pokemonBox__pokemon", "li", pokemon.url)
       );
     })();
+  }
+  createHTML() {
+    const textHTML = `
+        <nav class="componente__navegacion"></nav>
+        <ul class="pokemonBox"></ul>
+      `;
+    this.element.innerHTML = textHTML;
+  }
 
-    /*const pruebaPokemon = new Pokemon(
-      ".componente",
-      "pokemonBox__pokemon",
-      "div",
-      url
-    );*/
+  paginaSiguiente() {
+    console.log("Siguiente!");
+  }
+
+  paginaAnterior() {
+    console.log("Anterior!");
   }
 }
 
