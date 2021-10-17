@@ -10,7 +10,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: blue;
+  background-color: #abc5d1;
   height: 50px;
   width: 80vw;
 }
@@ -21,6 +21,26 @@
 }
 .componente__boton-pagina-posterior {
   height: 40px;
+  margin-right: 15px;
+}
+.componente__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #abc5d1;
+  height: 80px;
+  width: 80vw;
+}
+.componente__Name {
+  margin-right: 15px;
+  font-weight: bold;
+}
+.componente__Logo {
+  background-image: url(./IMG/Logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 80px;
   margin-right: 15px;
 }
 
