@@ -33,6 +33,7 @@ class Page extends Component {
 
     this.imprimirPokemons();
   }
+
   createHTML() {
     const textHTML = `
     <header>
@@ -98,8 +99,8 @@ class Page extends Component {
       );
       mostrarBoton.style.display = "none";
     }
-    this.urlPokemonsPagina = `https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${
-      this.numeroPagina * 10
+    this.urlPokemonsPagina = `https://pokeapi.co/api/v2/pokemon/?limit=14&offset=${
+      this.numeroPagina * 14
     }`;
   }
 }

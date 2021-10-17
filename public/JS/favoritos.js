@@ -1,6 +1,5 @@
 import FavoritosPage from "./FavoritosPage.js";
 
-debugger;
 const pruebaPokemon = new FavoritosPage(
   "body",
   "componente",

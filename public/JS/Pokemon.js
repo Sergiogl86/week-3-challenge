@@ -47,13 +47,33 @@ class Pokemon extends Component {
   }
 
   enviarInformacion() {
-    debugger;
-    let datos = { name: this.name, url: this.url };
-    let enviarPokemon = new Service(this.url);
-    enviarPokemon.createElement(
-      datos,
-      "https://week-3-challenge-api.herokuapp.com/pokemon/"
-    );
+    (async () => {
+      debugger;
+
+      let servicePokemon = new Service(
+        "https://week-3-challenge-api.herokuapp.com/pokemon/"
+      );
+      let consultarDuplicidad = await servicePokemon.getService(
+        "https://week-3-challenge-api.herokuapp.com/pokemon/"
+      );
+      console.log(consultarDuplicidad);
+      let duplicado = consultarDuplicidad.find(
+        (pokemon) => pokemon.name === this.name
+      );
+      console.log("consulta funcion duplicado");
+      console.log(duplicado);
+
+      if (duplicado === undefined) {
+        let datos = { name: this.name, url: this.url };
+        let enviarPokemon = new Service(this.url);
+        enviarPokemon.createElement(
+          datos,
+          "https://week-3-challenge-api.herokuapp.com/pokemon/"
+        );
+      } else {
+        console.log("Pokemon duplicado");
+      }
+    })();
   }
 
   mostrarInformacion() {
@@ -68,6 +88,7 @@ class Pokemon extends Component {
     enviarPokemon.borrarElement(
       `https://week-3-challenge-api.herokuapp.com/pokemon/${this.posicionId}/`
     );
+    this.element.remove();
   }
 }
 
