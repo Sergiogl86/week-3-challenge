@@ -13,8 +13,10 @@
   background-color: #abc5d1;
   height: 50px;
   width: 80vw;
+  border-width: 10px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  padding: 30px;
 }
 .componente__boton-pagina-anterior {
   height: 40px;
@@ -37,8 +39,10 @@
   background-color: #abc5d1;
   height: 80px;
   width: 80vw;
+  border-width: 10px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  padding: 30px;
 }
 .componente__Name {
   margin-right: 15px;
@@ -56,12 +60,12 @@
 .atributosBox {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
-  padding: 0;
+  justify-content: center;
   border-color: #abc5d1;
   border-width: 10px;
   border-style: solid;
   padding: 20px;
+  width: 80vw;
 }
 .atributosBox__pokemon {
   display: flex;
@@ -78,25 +82,32 @@
   background-color: #ffcb05;
   font-size: 12px;
   color: red;
+  font-size: 25px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .atributosBox__pokemon:hover {
   box-shadow: 5px 5px 15px #f71920;
 }
 .atributosBox__imagPokemon {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
+}
+.atributosBox__atributos {
+  color: black;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 18px;
 }
 
 .pokemonBox {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
-  padding: 0;
   border-color: #abc5d1;
   border-width: 10px;
   border-style: solid;
   padding: 20px;
+  width: 80vw;
+  margin: 0;
 }
 .pokemonBox__pokemon {
   display: flex;
