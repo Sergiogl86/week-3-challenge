@@ -33,14 +33,17 @@ class Pokemon extends Component {
           alt=""
         />
         
-        <div><button class="pokemonBox__button-fav">|Añadir a Favoritos|</button>
-        <div><button class="pokemonBox__button-info">Info Pokemon</button></div>
+        <div><button class="borrar pokemonBox__button-fav">|Añadir a Favoritos|</button>
+        <div><button class="borrar pokemonBox__button-info">Info Pokemon</button></div>
+        <div><button class="borrar pokemonBox__button-borrar">|Borrar|</button></div>
       `;
     this.element.innerHTML = textHTML;
     let button = this.element.querySelector(".pokemonBox__button-fav");
     button.addEventListener("click", () => this.enviarInformacion());
     button = this.element.querySelector(".pokemonBox__button-info");
     button.addEventListener("click", () => this.mostrarInformacion());
+    button = this.element.querySelector(".pokemonBox__button-borrar");
+    button.addEventListener("click", () => this.borrarPokemon());
   }
 
   enviarInformacion() {
@@ -52,10 +55,19 @@ class Pokemon extends Component {
       "https://week-3-challenge-api.herokuapp.com/pokemon/"
     );
   }
+
   mostrarInformacion() {
     console.log(this.name);
     console.log(this.url);
     console.log(this.posicionId);
+  }
+
+  borrarPokemon() {
+    debugger;
+    let enviarPokemon = new Service(this.url);
+    enviarPokemon.borrarElement(
+      `https://week-3-challenge-api.herokuapp.com/pokemon/${this.posicionId}/`
+    );
   }
 }
 
