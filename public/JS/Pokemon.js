@@ -1,3 +1,4 @@
+import Atributos from "./Atributos.js";
 import Component from "./Component.js";
 import Service from "./Service.js";
 
@@ -97,9 +98,20 @@ class Pokemon extends Component {
   }
 
   mostrarInformacion() {
+    debugger;
     console.log(this.name);
     console.log(this.url);
     console.log(this.posicionId);
+    let borrarPokemons = document.querySelector(".atributosBox_atributos");
+    while (borrarPokemons.firstChild) {
+      borrarPokemons.removeChild(borrarPokemons.firstChild);
+    }
+    new Atributos(
+      ".atributosBox_atributos",
+      "atributosBox__pokemon",
+      "li",
+      this.url
+    );
   }
 
   borrarPokemon() {
