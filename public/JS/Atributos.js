@@ -9,6 +9,11 @@ class Atributos extends Component {
   posicionId;
   pokemon;
   favorito;
+  order;
+  type;
+  xp;
+  height;
+  weight;
   constructor(
     parentElement,
     className,
@@ -30,21 +35,40 @@ class Atributos extends Component {
       this.name = mostrarPokemon.name;
       this.imgUrl = mostrarPokemon.sprites.other.dream_world.front_default;
       this.id = mostrarPokemon.id;
+      this.order = mostrarPokemon.order;
+      this.type = mostrarPokemon.types;
+      this.xp = mostrarPokemon.base_experience;
+      this.height = mostrarPokemon.height;
+      this.weight = mostrarPokemon.weight;
       this.createHTML();
     })();
   }
   createHTML() {
     const textHTML = `
-        <h2 class="atributosBox__namePokemon">${this.name} #${this.id}</h2>
+        <h2 class="atributosBox__namePokemon">${this.name}</h2>
         <img
           class="atributosBox__imagPokemon"
           src="${this.imgUrl}"
           alt=""
         />
+        <div class="atributosBox__atributos">
+        <p> Order: ${this.order} </p>
+        <p class="atributosBox__type"> Type: ${this.type[0].type.name} </p>
+        <p> XP: ${this.xp} </p>
+        <p> Height: ${this.height} </p>
+        <p> Weight: ${this.weight} </p>
+
+        </div>
         
-        <div><button class="borrar atributosBox__button-cerrar">|Cerrar|</button>
+        <div><button class="borrar atributosBox__button-cerrar">|Cerrar|</button></div>
       `;
     this.element.innerHTML = textHTML;
+    if (this.type.length > 1) {
+      this.element.querySelector(
+        ".atributosBox__type"
+      ).textContent += ` - ${this.type[1].type.name}`;
+    }
+
     let button = this.element.querySelector(".atributosBox__button-cerrar");
     button.addEventListener("click", () => this.cerrarAtributos());
   }
