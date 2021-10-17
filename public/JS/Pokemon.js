@@ -8,10 +8,19 @@ class Pokemon extends Component {
   id;
   posicionId;
   pokemon;
-  constructor(parentElement, className, tag, url, posicionId = 0) {
+  favorito;
+  constructor(
+    parentElement,
+    className,
+    tag,
+    url,
+    posicionId = 0,
+    favorito = false
+  ) {
     super(parentElement, className, tag);
     this.url = url;
     this.posicionId = posicionId;
+    this.favorito = favorito;
 
     (async () => {
       let servicePokemon = new Service(this.url);
@@ -22,6 +31,19 @@ class Pokemon extends Component {
       this.imgUrl = mostrarPokemon.sprites.other.dream_world.front_default;
       this.id = mostrarPokemon.id;
       this.createHTML();
+      (() => {
+        if (this.favorito === true) {
+          let ocultarBoton = this.element.querySelector(
+            ".pokemonBox__button-fav"
+          );
+          ocultarBoton.style.display = "none";
+        } else {
+          let ocultarBoton = this.element.querySelector(
+            ".pokemonBox__button-borrar"
+          );
+          ocultarBoton.style.display = "none";
+        }
+      })();
     })();
   }
   createHTML() {
@@ -48,8 +70,6 @@ class Pokemon extends Component {
 
   enviarInformacion() {
     (async () => {
-      debugger;
-
       let servicePokemon = new Service(
         "https://week-3-challenge-api.herokuapp.com/pokemon/"
       );
@@ -83,7 +103,6 @@ class Pokemon extends Component {
   }
 
   borrarPokemon() {
-    debugger;
     let enviarPokemon = new Service(this.url);
     enviarPokemon.borrarElement(
       `https://week-3-challenge-api.herokuapp.com/pokemon/${this.posicionId}/`
