@@ -44,7 +44,9 @@ class Page extends Component {
       </nav>
     </header>
       <h2>Pokemons - Pokemon API</h2>
-        <nav class="componente__navegacion"></nav>
+        <nav class="componente__navegacion">
+        <div class="componente__indice"> 14 / 1118</div>
+        </nav>
         <ul class="pokemonBox"></ul>
         <footer class="componente__footer">
             <div class="componente__Logo">               
@@ -109,6 +111,8 @@ class Page extends Component {
     this.urlPokemonsPagina = `https://pokeapi.co/api/v2/pokemon/?limit=14&offset=${
       this.numeroPagina * 14
     }`;
+    let indice = this.element.querySelector(".componente__indice");
+    indice.innerHTML = `${14 + this.numeroPagina * 14} / 1118`;
   }
 }
 
