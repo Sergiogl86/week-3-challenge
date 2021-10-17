@@ -7,6 +7,7 @@ class FavoritosPage extends Component {
   paginaPokemons;
   urlPokemonsPagina;
   numeroPagina = 0;
+  pagina = "personalAPI";
   constructor(
     parentElement,
     className,
@@ -50,7 +51,8 @@ class FavoritosPage extends Component {
             "pokemonBox__pokemon",
             "li",
             pokemon.url,
-            pokemon.id
+            pokemon.id,
+            true
           )
       );
     })();
