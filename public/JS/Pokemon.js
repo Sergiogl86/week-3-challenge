@@ -44,9 +44,13 @@ class Pokemon extends Component {
   }
 
   enviarInformacion() {
+    debugger;
     let datos = { name: this.name, url: this.url };
     let enviarPokemon = new Service(this.url);
-    enviarPokemon.createElement(datos, "http://localhost:3001/posts");
+    enviarPokemon.createElement(
+      datos,
+      "https://week-3-challenge-api.herokuapp.com/pokemon/"
+    );
   }
   mostrarInformacion() {
     console.log(this.name);
