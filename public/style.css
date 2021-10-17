@@ -38,7 +38,7 @@
   align-items: center;
   width: 200px;
   border-style: dotted;
-  margin: auto;
+  margin: 5px;
 }
 .pokemonBox__imagPokemon {
   height: 150px;

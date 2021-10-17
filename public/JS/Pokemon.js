@@ -62,7 +62,13 @@ class Pokemon extends Component {
     console.log(this.posicionId);
   }
 
-  borrarPokemon() {}
+  borrarPokemon() {
+    debugger;
+    let enviarPokemon = new Service(this.url);
+    enviarPokemon.borrarElement(
+      `https://week-3-challenge-api.herokuapp.com/pokemon/${this.posicionId}/`
+    );
+  }
 }
 
 export default Pokemon;

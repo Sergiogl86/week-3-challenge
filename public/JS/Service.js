@@ -1,3 +1,5 @@
+import pruebaPokemon from "./favoritos.js";
+
 class Service {
   pokemon;
   url;
@@ -43,6 +45,9 @@ class Service {
     };
     const response = await fetch(url, data);
     const newElement = await response.json();
+
+    pruebaPokemon.borrarPokemons();
+    pruebaPokemon.imprimirPokemons();
   }
 }
 
