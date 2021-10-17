@@ -55,9 +55,9 @@ class Pokemon extends Component {
           alt=""
         />
         
-        <div><button class="borrar pokemonBox__button-fav">|Añadir a Favoritos|</button>
-        <div><button class="borrar pokemonBox__button-info">Info Pokemon</button></div>
-        <div><button class="borrar pokemonBox__button-borrar">|Borrar|</button></div>
+        <div><button class="pokemonBox__button--boton pokemonBox__button-fav">|Añadir a Favoritos|</button>
+        <div><button class="pokemonBox__button--boton pokemonBox__button-info">Info Pokemon</button></div>
+        <div><button class="pokemonBox__button--boton pokemonBox__button-borrar">|Borrar|</button></div>
       `;
     this.element.innerHTML = textHTML;
     let button = this.element.querySelector(".pokemonBox__button-fav");

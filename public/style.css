@@ -110,6 +110,16 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
+.atributosBox__button--boton {
+  border-radius: 10px;
+  background-color: #29298f;
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+.atributosBox__button--boton:hover {
+  box-shadow: 5px 5px 15px #f71920;
+}
 
 .pokemonBox {
   display: flex;
@@ -144,6 +154,15 @@
 .pokemonBox__imagPokemon {
   height: 150px;
   width: 150px;
+}
+.pokemonBox__button--boton {
+  border-radius: 10px;
+  background-color: #29298f;
+  font-weight: bold;
+  color: white;
+}
+.pokemonBox__button--boton:hover {
+  box-shadow: 5px 5px 15px #f71920;
 }
 
 /*# sourceMappingURL=style.css.map */

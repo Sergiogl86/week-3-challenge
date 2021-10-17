@@ -59,7 +59,7 @@ class Atributos extends Component {
 
         </div>
         
-        <div><button class="borrar atributosBox__button-cerrar">|Cerrar|</button></div>
+        <div><button class="atributosBox__button--boton atributosBox__button-cerrar">|Cerrar|</button></div>
       `;
     this.element.innerHTML = textHTML;
     if (this.type.length > 1) {
