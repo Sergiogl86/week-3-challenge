@@ -23,6 +23,11 @@
   height: 40px;
   margin-right: 15px;
 }
+.componente__indice {
+  margin-right: 15px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 .componente__footer {
   display: flex;
   justify-content: flex-end;
