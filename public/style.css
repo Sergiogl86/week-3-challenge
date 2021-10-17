@@ -19,13 +19,25 @@
   padding: 30px;
 }
 .componente__boton-pagina-anterior {
-  height: 40px;
+  height: 80px;
+  width: 80px;
   display: none;
   margin-right: 15px;
+  border-radius: 50%;
+  background-image: url(./IMG/ATRAS-Boton-pokeball.png);
+}
+.componente__boton-pagina-anterior:hover {
+  box-shadow: 5px 5px 15px #f71920;
 }
 .componente__boton-pagina-posterior {
-  height: 40px;
+  height: 80px;
+  width: 80px;
   margin-right: 30px;
+  border-radius: 50%;
+  background-image: url(./IMG/ADELANTE-Boton-pokeball.png);
+}
+.componente__boton-pagina-posterior:hover {
+  box-shadow: 5px 5px 15px #f71920;
 }
 .componente__indice {
   margin-right: 15px;

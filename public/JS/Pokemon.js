@@ -26,7 +26,6 @@ class Pokemon extends Component {
     (async () => {
       let servicePokemon = new Service(this.url);
       let mostrarPokemon = await servicePokemon.getService(this.url);
-      console.log(mostrarPokemon);
       this.pokemon = mostrarPokemon;
       this.name = mostrarPokemon.name;
       this.imgUrl = mostrarPokemon.sprites.other.dream_world.front_default;
@@ -77,13 +76,9 @@ class Pokemon extends Component {
       let consultarDuplicidad = await servicePokemon.getService(
         "https://week-3-challenge-api.herokuapp.com/pokemon/"
       );
-      console.log(consultarDuplicidad);
       let duplicado = consultarDuplicidad.find(
         (pokemon) => pokemon.name === this.name
       );
-      console.log("consulta funcion duplicado");
-      console.log(duplicado);
-
       if (duplicado === undefined) {
         let datos = { name: this.name, url: this.url };
         let enviarPokemon = new Service(this.url);
@@ -98,10 +93,6 @@ class Pokemon extends Component {
   }
 
   mostrarInformacion() {
-    debugger;
-    console.log(this.name);
-    console.log(this.url);
-    console.log(this.posicionId);
     let borrarPokemons = document.querySelector(".atributosBox_atributos");
     while (borrarPokemons.firstChild) {
       borrarPokemons.removeChild(borrarPokemons.firstChild);

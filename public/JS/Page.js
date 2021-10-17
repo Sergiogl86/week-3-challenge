@@ -20,14 +20,14 @@ class Page extends Component {
       ".componente__navegacion",
       "componente__boton-pagina-anterior",
       "button",
-      "|Pagina Anterior|",
+      "",
       () => this.paginaAnterior()
     );
     new Button(
       ".componente__navegacion",
       "componente__boton-pagina-posterior",
       "button",
-      "|Pagina Siguiente|",
+      "",
       () => this.paginaSiguiente()
     );
 
@@ -69,7 +69,6 @@ class Page extends Component {
       let mostrarPokemon = await servicePokemon.getService(
         this.urlPokemonsPagina
       );
-      console.log(mostrarPokemon);
       this.paginaPokemons = mostrarPokemon.results;
       this.paginaPokemons.map(
         (pokemon) =>
@@ -86,14 +85,12 @@ class Page extends Component {
   }
 
   paginaSiguiente() {
-    console.log("Siguiente!");
     this.borrarPokemons();
     this.actualizar(1);
     this.imprimirPokemons();
   }
 
   paginaAnterior() {
-    console.log("Anterior!");
     this.borrarPokemons();
     this.actualizar(-1);
     this.imprimirPokemons();

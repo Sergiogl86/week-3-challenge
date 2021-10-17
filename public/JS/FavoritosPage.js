@@ -54,7 +54,6 @@ class FavoritosPage extends Component {
       let mostrarPokemon = await servicePokemon.getService(
         this.urlPokemonsPagina
       );
-      console.log(mostrarPokemon);
       this.paginaPokemons = mostrarPokemon;
       this.paginaPokemons.map(
         (pokemon) =>
@@ -78,14 +77,12 @@ class FavoritosPage extends Component {
   }
 
   paginaSiguiente() {
-    console.log("Siguiente!");
     this.borrarPokemons();
     this.actualizar(1);
     this.imprimirPokemons();
   }
 
   paginaAnterior() {
-    console.log("Anterior!");
     this.borrarPokemons();
     this.actualizar(-1);
     this.imprimirPokemons();
