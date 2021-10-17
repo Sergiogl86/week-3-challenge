@@ -32,6 +32,10 @@ class FavoritosPage extends Component {
       <h2>Pokemons - Pokemons Favoritos</h2>
         <nav class="componente__navegacion">
         </nav>
+        <div class="atributosBox"> 
+        <h2 class="atributosBox_titulo"> Atributos</h2>
+        <ul class="atributosBox_atributos"></ul>
+        </div>
         <ul class="pokemonBox"></ul>
         <footer class="componente__footer">
             <div class="componente__Logo">               

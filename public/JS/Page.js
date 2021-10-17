@@ -47,6 +47,10 @@ class Page extends Component {
         <nav class="componente__navegacion">
         <div class="componente__indice"> 14 / 1118</div>
         </nav>
+        <div class="atributosBox"> 
+        <h2 class="atributosBox_titulo"> Atributos</h2>
+        <ul class="atributosBox_atributos"></ul>
+        </div>
         <ul class="pokemonBox"></ul>
         <footer class="componente__footer">
             <div class="componente__Logo">               
