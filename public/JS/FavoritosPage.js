@@ -32,6 +32,13 @@ class FavoritosPage extends Component {
       <h2>Pokemons - Pokemons Favoritos</h2>
         <nav class="componente__navegacion"></nav>
         <ul class="pokemonBox"></ul>
+        <footer class="componente__footer">
+            <div class="componente__Logo">               
+            </div>
+            <div class="componente__Name">
+              <p id='componente__Sergio'> Sergio García López  2021-09-precourse</p>                
+            </div>    
+        </footer>
       `;
     this.element.innerHTML = textHTML;
   }
