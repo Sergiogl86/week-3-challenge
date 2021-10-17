@@ -45,7 +45,13 @@ class FavoritosPage extends Component {
       this.paginaPokemons = mostrarPokemon;
       this.paginaPokemons.map(
         (pokemon) =>
-          new Pokemon(".pokemonBox", "pokemonBox__pokemon", "li", pokemon.url)
+          new Pokemon(
+            ".pokemonBox",
+            "pokemonBox__pokemon",
+            "li",
+            pokemon.url,
+            pokemon.id
+          )
       );
     })();
   }
