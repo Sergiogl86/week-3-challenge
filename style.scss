@@ -7,7 +7,7 @@
   margin: auto;
   &__navegacion {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background-color: blue;
     height: 50px;
@@ -16,17 +16,19 @@
   &__boton-pagina-anterior {
     height: 40px;
     display: none;
+    margin-right: 15px;
   }
   &__boton-pagina-posterior {
     height: 40px;
+    margin-right: 15px;
   }
 }
 
 .pokemonBox {
   display: flex;
   flex-wrap: wrap;
-
   margin: auto;
+  padding: 0;
   background-color: aquamarine;
 
   &__pokemon {
@@ -36,6 +38,8 @@
     align-items: center;
     width: 200px;
     border-style: dotted;
+
+    margin: auto;
   }
   &__imagPokemon {
     height: 150px;

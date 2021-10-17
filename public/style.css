@@ -8,7 +8,7 @@
 }
 .componente__navegacion {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   background-color: blue;
   height: 50px;
@@ -17,15 +17,18 @@
 .componente__boton-pagina-anterior {
   height: 40px;
   display: none;
+  margin-right: 15px;
 }
 .componente__boton-pagina-posterior {
   height: 40px;
+  margin-right: 15px;
 }
 
 .pokemonBox {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  padding: 0;
   background-color: aquamarine;
 }
 .pokemonBox__pokemon {
@@ -35,6 +38,7 @@
   align-items: center;
   width: 200px;
   border-style: dotted;
+  margin: auto;
 }
 .pokemonBox__imagPokemon {
   height: 150px;
