@@ -30,7 +30,6 @@ class Atributos extends Component {
     (async () => {
       let servicePokemon = new Service(this.url);
       let mostrarPokemon = await servicePokemon.getService(this.url);
-      console.log(mostrarPokemon);
       this.pokemon = mostrarPokemon;
       this.name = mostrarPokemon.name;
       this.imgUrl = mostrarPokemon.sprites.other.dream_world.front_default;
@@ -60,7 +59,7 @@ class Atributos extends Component {
 
         </div>
         
-        <div><button class="borrar atributosBox__button-cerrar">|Cerrar|</button></div>
+        <div><button class="atributosBox__button--boton atributosBox__button-cerrar">|Cerrar|</button></div>
       `;
     this.element.innerHTML = textHTML;
     if (this.type.length > 1) {

@@ -7,10 +7,8 @@ class Service {
 
   async getService(url) {
     //async function busquedaFetch() {
-    console.log(url);
     try {
       const response = await fetch(url);
-      console.log(response);
       if (response.ok) {
         const dataResponse = await response.json();
         return dataResponse;
